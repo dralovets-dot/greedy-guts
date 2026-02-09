@@ -1,0 +1,16 @@
+# PlatformIO
+.pio/
+display_fw/
+encoder_fw/
+firmware_binaries/
+
+# Compiled files
+*.bin
+*.elf
+*.hex
+
+# IDE
+.vscode/
+
+# GitHub Actions
+!/.github/workflows/
