@@ -1,25 +1,18 @@
-name: Simple Test
+name: Minimal Test
 
-on: [workflow_dispatch]
+on:
+  workflow_dispatch
 
 jobs:
   test:
     runs-on: ubuntu-latest
-    
     steps:
-    - name: Step 1
-      run: echo "Step 1: Checking out"
-      
-    - name: Step 2
-      run: echo "Step 2: Creating files"
-      
-    - name: Step 3
-      run: |
-        mkdir output
-        echo "Test file" > output/test.txt
-        dd if=/dev/urandom of=output/firmware.bin bs=1024 count=10
-        
-    - uses: actions/upload-artifact@v4
-      with:
-        name: test-output
-        path: output/
+      - name: Step 1
+        run: echo "Hello World"
+      - name: Step 2
+        run: mkdir out && echo "Test" > out/file.txt
+      - name: Upload
+        uses: actions/upload-artifact@v4
+        with:
+          name: result
+          path: out
